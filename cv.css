@@ -145,10 +145,17 @@ body {
         margin: 0;
     }
 
-    font-size: 0.75rem;
-    margin: 0 5px 10px 0;
-    border: 1px solid rgba(212, 175, 55, 0.3);
-}
+    .skill-tag {
+        display: inline-block;
+        font-size: 0.75rem;
+        margin: 0 5px 10px 0;
+        padding: 6px 12px;
+        border: 1px solid rgba(212, 175, 55, 0.3);
+        border-radius: 999px;
+        color: var(--text-light);
+        background: rgba(212, 175, 55, 0.08);
+    }
+
 
 /* Main Content */
 .main-content {
@@ -267,38 +274,127 @@ section {
 
 /* Print Styles */
 @media print {
+    @page {
+        size: A4 portrait;
+        margin: 8mm;
+    }
     body {
         padding: 0;
         background: #fff;
+        color: #000;
+        font-size: 0.75rem !important;
+        line-height: 1.15 !important;
     }
     .cv-container {
         box-shadow: none;
         border: none;
         max-width: 100%;
         border-radius: 0;
+        grid-template-columns: 180px 1fr;
+        overflow: visible;
     }
     .sidebar {
         background-color: #f8f9fa !important;
         border-right: 1px solid #ddd !important;
+        padding: 10px 8px !important;
+        min-width: 180px !important;
     }
     .main-content {
         background: #fff !important;
+        padding: 12px !important;
     }
-    .no-print {
-        display: none !important;
-    }
-    .text-light, h1, h2, h3, p, li, .sidebar-title, .title {
+    .summary p,
+    .entry p,
+    .entry h3,
+    .date,
+    .institution,
+    .section-title,
+    .sidebar-title,
+    .title,
+    .skill-tag,
+    .sidebar ul li {
         color: #000 !important;
     }
-    .primary-gold {
-        color: #886a08 !important;
+    .sidebar ul li {
+        font-size: 0.68rem !important;
+        margin-bottom: 6px !important;
+        gap: 6px !important;
+    }
+    .section-title {
+        font-size: 1.1rem !important;
+        margin-bottom: 8px !important;
+    }
+    .summary p {
+        font-size: 0.82rem !important;
+        line-height: 1.2 !important;
+        margin-bottom: 8px !important;
+    }
+    .entry {
+        margin-bottom: 6px !important;
+        padding-left: 8px !important;
+        border-left: none !important;
+    }
+    .entry-header {
+        display: block !important;
+        margin-bottom: 2px !important;
+    }
+    .entry h3 {
+        font-size: 0.9rem !important;
+        margin-bottom: 0 !important;
+    }
+    .date,
+    .institution {
+        font-size: 0.7rem !important;
+    }
+    section {
+        margin-bottom: 8px !important;
+    }
+    .qr-portfolio,
+    .actions,
+    .project img {
+        display: none !important;
+    }
+    .sidebar-title {
+        font-size: 0.78rem !important;
+        margin: 12px 0 6px !important;
+    }
+    .name {
+        font-size: 1.1rem !important;
+    }
+    .title {
+        font-size: 0.62rem !important;
     }
     .skill-tag {
-        border: 1px solid #ccc !important;
-        color: #333 !important;
+        border: 1px solid #999 !important;
+        background: #f2f2f2 !important;
+        color: #222 !important;
+        padding: 2px 5px !important;
+        font-size: 0.62rem !important;
+        margin: 0 2px 4px 0 !important;
+    }
+    .focus-interest ul {
+        padding-left: 14px;
+        margin: 0;
+    }
+    .focus-interest ul li {
+        margin-bottom: 2px;
+    }
+    .social-media .entry p {
+        margin-bottom: 2px !important;
+        font-size: 0.74rem !important;
+    }
+    .profile-section {
+        margin-bottom: 10px !important;
+    }
+    .photo-circle {
+        width: 80px !important;
+        height: 80px !important;
+    }
+    .cv-photo {
+        width: 70px !important;
+        height: 70px !important;
     }
 }
-
 /* Responsive */
 @media (max-width: 768px) {
     .cv-container {

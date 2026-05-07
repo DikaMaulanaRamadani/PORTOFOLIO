@@ -482,6 +482,25 @@ section h2::before {
     line-height: 1.6;
 }
 
+.section-subtitle {
+    margin-top: 0.75rem;
+    margin-bottom: 1.5rem;
+    color: #D4AF37;
+    font-size: 1.1rem;
+    font-weight: 600;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+}
+
+.skill-icon svg {
+    width: 3.5rem;
+    height: 3.5rem;
+}
+
+.learning-section {
+    margin-top: clamp(2rem, 3vw, 3rem);
+}
+
 /* Projects */
 .projects-grid {
     display: grid;
